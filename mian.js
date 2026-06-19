@@ -431,7 +431,7 @@ ipcMain.on('desktop-card:update-note', (_event, notePatch) => {
     mainWindow?.webContents.send('notes:update-from-desktop', notePatch || {});
 });
 
-// 关闭全部窗口时退出应用，macOS 保留系统常见行为。
+// 关闭全部窗口时退出应用
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
